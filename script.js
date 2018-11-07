@@ -28,7 +28,7 @@ class UserList {
 
         const list = document.createElement('ul')
 
-        this.users.forEach( user => {
+        this.users.forEach( (user, i) => {
             const li = document.createElement('li')
             const button = document.createElement('button')
             button.innerText = 'Usuń'
@@ -39,7 +39,7 @@ class UserList {
                 alert(`${user.email}`)
             })
             button.addEventListener('click', () => {
-                this.users.splice(this.user,1)
+                this.users.splice(i,1)
                 this.render()
             })
         })
