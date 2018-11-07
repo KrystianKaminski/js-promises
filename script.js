@@ -1,22 +1,18 @@
+class UserList {
+    constructor(container) {
+        this.users = []
+        this.container = container
+    }
+    render() {
+        this.container.innerHTML = ''
 
-fetch('https://randomuser.me/api/?results=10')
-    .then(response => response.json())
+        const list = document.createElement('ul')
 
-// We call .json() on resolved response object
-// Because we want to parse stream of bytes (body)
-// into JS object (in most cases object)
+        this.users.forEach( user => {
+            const li = document.createElement('li')
+            li.innerText = `${name.first} ${name.last}`
+        })
 
-    .then(data => {
-        const arr = []
-        for (let i = 0; i < data.results.length; i++) {
-            arr.push(data.results[i].name.first)
-        }
-        console.log(arr)
-
-        for (let a = 0; a < arr.length; a++) {
-            const div = document.createElement('div')
-            div.innerHTML = arr[a]
-            document.body.appendChild(div)
-        }
-    })
-
+        this.container.appendChild(ul)
+    }
+}
