@@ -1,14 +1,11 @@
-// Creation of promise in sync
-const promise = fetch('https://randomuser.me/api')
+// function that is passed into then() is called when promise will be resolved
+// with promise resolution(value)
 
-// Then is for registering functions that will be called with promise will be resolved
-promise 
-    .then(() => {
-        console.log('Im on the function that will be called when promise is resolved!')
-})
+// in fetch promise is resolving into Response object
 
-// then is sync and returns NEW promise
-// function that is passed as arg into then will be called async when promise will be resolved
-const promise2 = promise.then(() => {
-    
-});
+fetch('https://randomuser.me/api')
+    .then(response => console.log(response))
+
+// when data will be fetched promise is resolved
+// and function passed to  then is called with 
+// resolved data as an argument
