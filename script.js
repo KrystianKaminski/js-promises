@@ -20,6 +20,9 @@ class UserList {
                 this.render()
             })
     }
+    removeItem() {
+        this.users.splice()
+    }
     render() {
         this.container.innerHTML = ''
 
@@ -36,9 +39,8 @@ class UserList {
                 alert(`${user.email}`)
             })
             button.addEventListener('click', () => {
-                li.style.display = 'none'
-                button.style.display = 'none'
-
+                this.users.splice(this.user,1)
+                this.render()
             })
         })
 
