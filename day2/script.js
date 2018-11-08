@@ -14,6 +14,7 @@ class App {
             case 'userView':
                 this.userView.render(params.uid)
                     .then(viewContent => this.render(viewContent))
+                    .catch( () => this.render(this.notFoundView.render()))
                 break
             case 'notFoundView':
                 this.render(this.notFoundView.render())
@@ -34,7 +35,6 @@ class ListView {
             .then(data => {
                 const div = document.createElement('div')
                 div.innerText = 'ListView'
-                
                 data.forEach(user => {
                     const div2 = document.createElement('div')
                     div2.innerText = `${user.name} ${user.lastname}`
@@ -53,6 +53,11 @@ class UserView {
             .then(data => {
                 const div = document.createElement('div')
                 div.innerText = data.email
+
+                // data.forEach(email => {
+                //     const email = document.createElement('div')
+                //     email.innerText = `$`
+                // })
                 return div
             })
             return promise
@@ -68,4 +73,4 @@ class NotFoundView {
 }
 
 const app = new App()
-app.renderView('userView', {uid: '1234'})
+app.renderView('userView', {uid: '333'})
