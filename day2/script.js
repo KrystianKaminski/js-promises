@@ -7,8 +7,14 @@ class App {
     renderView(viewName) {
         switch(viewName) {
             case 'listView':
-            this.render(this.listView.render())
-            break
+                this.render(this.listView.render())
+                break
+            case 'userView':
+                this.render(this.userView.render())
+                break
+            case 'notFoundView':
+                this.render(this.notFoundView.render())
+                break
         }
     }
     render(viewContent) {
@@ -41,3 +47,8 @@ class NotFoundView {
         return div
     }
 }
+
+const app = new App()
+app.renderView('listView')
+app.renderView('userView')
+app.renderView('notFoundView')
