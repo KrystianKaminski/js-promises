@@ -3,7 +3,14 @@ class App {
         this.listView = new ListView()
         this.userView = new UserView()
         this.notFoundView = new NotFoundView()
+
+        this.init()
     }
+
+    init() {
+        this.renderView('listView')
+    }
+    
     renderView(viewName, params) {
         switch(viewName) {
             case 'listView':
@@ -72,4 +79,3 @@ class NotFoundView {
 }
 
 const app = new App()
-app.renderView('listView')
