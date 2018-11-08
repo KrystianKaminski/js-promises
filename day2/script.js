@@ -33,7 +33,12 @@ class ListView {
             .then(data => {
                 const div = document.createElement('div')
                 div.innerText = 'ListView'
-                console.log(data)
+                
+                data.forEach(user => {
+                    const div2 = document.createElement('div')
+                    div2.innerText = `User ID ${user.uid}: Name: ${user.name} Lastname: ${user.lastname}`
+                    div.appendChild(div2)
+                })
                 return div
             })
             return promise
