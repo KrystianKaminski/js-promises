@@ -36,7 +36,7 @@ class ListView {
                 
                 data.forEach(user => {
                     const div2 = document.createElement('div')
-                    div2.innerText = `User ID ${user.uid}: Name: ${user.name} Lastname: ${user.lastname}`
+                    div2.innerText = `${user.name} ${user.lastname}`
                     div.appendChild(div2)
                 })
                 return div
